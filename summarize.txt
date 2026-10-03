@@ -1,0 +1,19 @@
+1. Chủ đề:
+Thiết kế và triển khai hệ thống DevSecOps & Multi-Environment GitOps tích hợp AIOps và Observability toàn diện cho ứng dụng Web 3-Tier trên nền tảng Cloud.
+
+2. Nội dung dự kiến:
+Container hóa và đóng gói: Đóng gói ứng dụng Web 3-Tier (React Frontend, Node.js REST API, PostgreSQL, Redis) với Docker, đảm bảo tính nhất quán giữa môi trường phát triển và môi trường Cloud.
+Xây dựng hạ tầng Cloud (Infrastructure as Code - IaC): Sử dụng Terraform để tự động hóa việc khởi tạo toàn bộ hạ tầng mạng và điện toán trực tiếp trên nền tảng Microsoft Azure (Virtual Network, Subnets, NSG, cụm Azure Kubernetes Service - AKS).
+Xây dựng quy trình CI/CD tích hợp DevSecOps: Tự động hóa qua GitHub Actions: chạy Unit Test, quét lỗ hổng bảo mật mã nguồn SAST (SonarQube), quét lỗ hổng container image (Trivy), tự động build và push image lên GitHub Container Registry (GHCR).
+Triển khai GitOps đa môi trường trên Cloud: Sử dụng Kustomize và ArgoCD để thiết lập luồng triển khai liên tục đa môi trường (Dev/Production) trên cụm AKS. Đảm bảo cơ chế Auto-Sync và Self-Healing từ Git repository.
+Quản lý lưu lượng và Bảo mật mạng: Cấu hình định tuyến lưu lượng qua NGINX Ingress Controller trên Cloud và tự động cấp phát chứng chỉ SSL/TLS Let's Encrypt bằng Cert-Manager để bảo mật HTTPS.
+Thiết lập Observability kết hợp AIOps:
+Triển khai stack giám sát: Prometheus (Metrics), Grafana Loki & Promtail (Logs), Grafana Dashboard.
+Tích hợp AI trong Monitor & Cảnh báo (AIOps): Thiết lập Alertmanager đẩy cảnh báo sự cố về Telegram/Discord, đồng thời tích hợp API của AI (VD: OpenAI/Gemini hoặc AI Bot) để tự động phân tích Log, đề xuất nguyên nhân gốc rễ (Root Cause Analysis - RCA) và gợi ý hướng xử lý bằng ngôn ngữ tự nhiên ngay khi hệ thống gặp lỗi.
+
+3. Kết quả dự kiến:
+Hệ thống ứng dụng và hạ tầng được quản lý tách biệt qua 2 Git repository (app-repo và infra-repo) theo chuẩn Enterprise GitOps.
+Pipeline CI/CD tự động hóa 100%, bảo mật được kiểm tra chặt chẽ (Shift-Left Security) trước khi ứng dụng được đưa lên môi trường Cloud.
+Toàn bộ hệ thống được vận hành và tự động đồng bộ trên cụm Azure Kubernetes (AKS) mà không cần can thiệp thủ công.
+Hệ thống giám sát cung cấp cái nhìn trực quan, thời gian thực về sức khỏe hạ tầng.
+AI ChatOps hoạt động hiệu quả: Khi có sự cố (ví dụ Pod bị Crash hoặc CPU quá tải), người quản trị không chỉ nhận được thông báo lỗi khô khan, mà còn nhận được phân tích lỗi từ AI ngay trong nhóm chat Telegram/Discord, giúp rút ngắn tối đa thời gian khắc phục sự cố (MTTR - Mean Time To Recovery).

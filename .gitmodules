@@ -1,0 +1,6 @@
+[submodule "app-repo"]
+	path = app-repo
+	url = https://github.com/baongdqu/app-repo.git
+[submodule "infra-repo"]
+	path = infra-repo
+	url = https://github.com/baongdqu/infra-repo.git
