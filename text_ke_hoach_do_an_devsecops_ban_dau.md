@@ -33,11 +33,11 @@ flowchart TD
 ### Repo 1: `app-repo` (Source Code)
 ```
 app-repo/
-├── frontend/                  # React app
+├── frontend/                  # Next.js app
 │   ├── src/
 │   ├── Dockerfile
 │   └── package.json
-├── backend/                   # Node.js REST API
+├── backend/                   # NestJS REST API
 │   ├── src/
 │   ├── Dockerfile
 │   └── package.json
@@ -83,8 +83,8 @@ infra-repo/
 
 | STT | Công việc | Công cụ | Output |
 |-----|-----------|---------|--------|
-| 1.1 | Tạo ứng dụng React Frontend (giao diện CRUD cơ bản) | React, Vite | `frontend/` |
-| 1.2 | Tạo Node.js REST API với các endpoint cơ bản | Express.js | `backend/` |
+| 1.1 | Tạo ứng dụng Next.js Frontend (giao diện CRUD cơ bản) | Next.js | `frontend/` |
+| 1.2 | Tạo NestJS REST API với các endpoint cơ bản | NestJS | `backend/` |
 | 1.3 | Cấu hình PostgreSQL + Redis | Docker | `docker-compose.yml` |
 | 1.4 | Viết Dockerfile tối ưu (multi-stage build) cho Frontend & Backend | Docker | `Dockerfile` mỗi service |
 | 1.5 | Kiểm tra toàn bộ stack chạy ổn định với `docker-compose up` | Docker Compose | Demo local |
@@ -205,7 +205,7 @@ Push to main / PR
 | STT | Công việc | Công cụ | Output |
 |-----|-----------|---------|--------|
 | 6.1 | Cài Prometheus + Alertmanager bằng `kube-prometheus-stack` Helm chart | Helm, Prometheus | Metrics scraping |
-| 6.2 | Expose /metrics endpoint trên Backend API | Node.js prom-client | Custom app metrics |
+| 6.2 | Expose /metrics endpoint trên Backend API | NestJS, prom-client | Custom app metrics |
 | 6.3 | Cài Grafana Loki + Promtail để thu thập logs từ tất cả pods | Helm, Loki | Centralized logs |
 | 6.4 | Tạo Grafana Dashboard: CPU, RAM, Request Rate, Error Rate, Latency | Grafana | Dashboard JSON |
 | 6.5 | Tạo Grafana Dashboard: Log Explorer (filter by service, level) | Grafana + Loki | Log dashboard |
@@ -270,8 +270,8 @@ Custom Bot Service (Node.js / Python)
 
 | Hạng mục | Công nghệ | Phiên bản |
 |----------|-----------|-----------|
-| **Frontend** | React + Vite | React 18+ |
-| **Backend** | Node.js + Express | Node 20 LTS |
+| **Frontend** | Next.js | 14+ / 15+ |
+| **Backend** | NestJS | 10+ (Node 20 LTS) |
 | **Database** | PostgreSQL | 15-alpine |
 | **Cache** | Redis | 7-alpine |
 | **Container** | Docker | Latest |
@@ -354,6 +354,6 @@ Tuần 8  │████████│ Giai đoạn 8: Báo cáo + Demo + Nộ
 ## 🚀 Bước Tiếp Theo Ngay Bây Giờ
 
 1. **Tạo 2 GitHub Repository**: `app-repo` và `infra-repo`
-2. **Scaffold ứng dụng**: Dùng `create-react-app` / `vite` cho frontend, Express.js cho backend
+2. **Scaffold ứng dụng**: Dùng `create-next-app` cho frontend, `@nestjs/cli` (`nest new`) cho backend
 3. **Thiết lập môi trường local**: Docker Desktop, VS Code, kubectl, Terraform CLI
 4. **Cài Azure CLI**: Đăng ký tài khoản Azure Student
