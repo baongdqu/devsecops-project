@@ -1,0 +1,19 @@
+1. Chủ đề:
+Thiết kế và triển khai hệ thống DevSecOps & Multi-Environment GitOps tích hợp AIOps và Observability toàn diện cho ứng dụng Web 3-Tier trên nền tảng Cloud.
+
+2. Nội dung dự kiến:
+Container hóa và đóng gói: Đóng gói ứng dụng Web 3-Tier (Next.js Frontend với output standalone, NestJS REST API, PostgreSQL, Redis) với Docker multi-stage build, đảm bảo tính nhất quán và khả năng promote cùng 1 Docker image giữa các môi trường (Dev/Production) thông qua relative path `/api` trên NGINX Ingress.
+Xây dựng hạ tầng Cloud (Infrastructure as Code - IaC): Sử dụng Terraform để tự động hóa việc khởi tạo hạ tầng mạng và điện toán trên Microsoft Azure (Resource Group, VNet, Subnets, NSG, cụm Azure Kubernetes Service - AKS 2 nodes D2s_v3) kèm tự động bootstrap ArgoCD App-of-Apps để dựng lại toàn bộ add-ons nhanh chóng sau mỗi lần `terraform destroy`.
+Xây dựng quy trình CI/CD tích hợp DevSecOps: Tự động hóa qua GitHub Actions: chạy Lint & Unit Test, quét lộ secret trong mã nguồn (Gitleaks), phân tích mã nguồn SAST (SonarQube Cloud), quét lỗ hổng cấu hình IaC/Dockerfile (Trivy Config), quét lỗ hổng container image (Trivy Image), tự động build và push image lên GitHub Container Registry (GHCR). Tách rõ luồng promote: push `main` tự động cập nhật `dev`, tạo Git Tag/Release (hoặc workflow dispatch/PR) mới promote lên `production`.
+Triển khai GitOps đa môi trường và Quản lý Secrets: Sử dụng Kustomize và ArgoCD (mô hình App-of-Apps) để thiết lập luồng triển khai liên tục đa môi trường (Dev/Production) trên cụm AKS với cơ chế Auto-Sync và Self-Healing; sử dụng Bitnami Sealed Secrets để mã hóa toàn bộ thông tin nhạy cảm trước khi lưu trên public Git repository.
+Quản lý lưu lượng và Bảo mật mạng: Cấu hình định tuyến lưu lượng qua NGINX Ingress Controller (`/` vào Frontend, `/api` vào Backend) và tự động cấp phát chứng chỉ SSL/TLS Let's Encrypt bằng Cert-Manager.
+Thiết lập Observability tối ưu tài nguyên kết hợp AIOps:
+Triển khai stack giám sát tối ưu cho 2 node `D2s_v3`: Prometheus (`kube-prometheus-stack`), Grafana Loki (chế độ `SingleBinary`) & Promtail với retention 1–3 ngày và `resources.requests/limits` chặt chẽ.
+Tích hợp AI trong Monitor & Cảnh báo (AIOps): Thiết lập Alertmanager (có `group_wait`/`repeat_interval`) đẩy cảnh báo sự cố về Bot Service, kết hợp truy vấn cả Grafana Loki API lẫn Kubernetes API (Pod status & Events) rồi gửi cho Google Gemini API (`gemini-2.5-flash`, có cơ chế cooldown/deduplication) để tự động phân tích nguyên nhân gốc rễ (RCA) và gợi ý hướng xử lý gửi về Telegram/Discord.
+
+3. Kết quả dự kiến:
+Hệ thống ứng dụng và hạ tầng được quản lý tách biệt qua 2 Git repository (`app-repo` và `infra-repo`) theo chuẩn Enterprise GitOps.
+Pipeline CI/CD tự động hóa 100%, bảo mật Shift-Left chặt chẽ (Gitleaks, SonarQube, Trivy IaC & Image) và quản lý Secrets an toàn bằng Sealed Secrets.
+Toàn bộ hạ tầng và add-ons tự động khôi phục nhanh qua Terraform + ArgoCD App-of-Apps trên cụm Azure Kubernetes (AKS).
+Hệ thống giám sát hoạt động ổn định, không tràn RAM trên cụm node nhỏ, cung cấp cái nhìn trực quan thời gian thực.
+AI ChatOps hoạt động chính xác kể cả với các lỗi tầng Kubernetes (`ImagePullBackOff`, `OOMKilled`, `CreateContainerConfigError`), giúp rút ngắn tối đa thời gian khắc phục sự cố (MTTR).
