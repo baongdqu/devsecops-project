@@ -12,7 +12,7 @@ Dự án được phân chia theo kiến trúc chuẩn doanh nghiệp (Enterpris
 | :--- | :---: | :--- | :--- |
 | **`app-repo`** | Submodule | Mã nguồn ứng dụng Web 3-Tier (**Next.js** standalone Frontend, **NestJS** REST API), Dockerfile multi-stage và GitHub Actions CI/DevSecOps (Unit Test, Gitleaks, SonarQube, Trivy Config & Image Scan, Build & Push GHCR). | [baongdqu/app-repo](https://github.com/baongdqu/app-repo) |
 | **`infra-repo`** | Submodule | Repository GitOps trung tâm: Terraform IaC (Azure AKS + bootstrap ArgoCD), Kustomize Overlays (`dev`/`production`), Bitnami Sealed Secrets, ArgoCD App-of-Apps, Observability Stack (`kube-prometheus-stack` + Loki `SingleBinary` + Promtail) và AIOps Bot. | [baongdqu/infra-repo](https://github.com/baongdqu/infra-repo) |
-| **`docs/`** | Folder | Chứa tài liệu kế hoạch đồ án chuẩn hóa ([`PROJECT_PLAN.md`](docs/PROJECT_PLAN.md)), phân công nhóm 4 người ([`TEAM_DIVISION.md`](docs/TEAM_DIVISION.md)), bản tóm tắt ([`PROJECT_SUMMARY.txt`](docs/PROJECT_SUMMARY.txt)) và file đăng ký môn học (`NT548.R11_DangKyDoAn.xlsx`). | — |
+| **`docs/`** | Folder | Chứa tài liệu kế hoạch đồ án chuẩn hóa ([`project_plan.md`](docs/project_plan.md)), phân công nhóm 4 người ([`team_division.md`](docs/team_division.md)), bản tóm tắt ([`project_summary.txt`](docs/project_summary.txt)) và file đăng ký môn học (`NT548.R11_DangKyDoAn.xlsx`). | — |
 
 ---
 

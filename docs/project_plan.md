@@ -2,7 +2,7 @@
 
 > **Chủ đề:** Thiết kế và triển khai hệ thống DevSecOps & Multi-Environment GitOps tích hợp AIOps và Observability toàn diện cho ứng dụng Web 3-Tier trên nền tảng Cloud.
 >
-> *(Bản kế hoạch đã được chuẩn hóa theo 6 điểm tối ưu thực tế; bản gốc được lưu dự phòng tại [PROJECT_PLAN.backup.md](PROJECT_PLAN.backup.md)).*
+> *(Bản kế hoạch đã được chuẩn hóa theo 6 điểm tối ưu thực tế; bản gốc được lưu dự phòng tại [project_plan.backup.md](project_plan.backup.md)).*
 
 ---
 
