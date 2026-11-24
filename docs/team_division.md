@@ -7,10 +7,10 @@
 
 | STT | Mã số SV | Họ và tên | Ghi chú phân công |
 | :---: | :---: | :--- | :--- |
-| 1 | `23520119` | **Nguyễn Duy Quốc Bảo** | **Phần 2** (CI/CD DevSecOps & Terraform AKS) — GitHub: `@baongdqu` |
-| 2 | `22521269` | **Cao Văn Tài** | Chờ gán Phần 1 / 3 / 4 |
-| 3 | `23520201` | **Nguyễn Hùng Cường** | Chờ gán Phần 1 / 3 / 4 |
-| 4 | `23520246` | **Hồ Minh Đạt** | Chờ gán Phần 1 / 3 / 4 |
+| 1 | `23520119` | **Nguyễn Duy Quốc Bảo** | **Phần 3** (GitOps, Kustomize, Sealed Secrets & Ingress/TLS) — GitHub: `@baongdqu` |
+| 2 | `22521269` | **Cao Văn Tài** | Chờ gán Phần 1 / 2 / 4 |
+| 3 | `23520201` | **Nguyễn Hùng Cường** | Chờ gán Phần 1 / 2 / 4 |
+| 4 | `23520246` | **Hồ Minh Đạt** | Chờ gán Phần 1 / 2 / 4 |
 
 Tài liệu này quy định ranh giới sở hữu thư mục, **Interface Contracts (Hợp đồng giao tiếp)** và quy trình làm việc song song cho **4 thành viên**, đảm bảo làm việc độc lập và **không xung đột Git (Zero Merge Conflict)**.
 
@@ -33,8 +33,8 @@ flowchart LR
 | Phần | Phụ trách & Trạng thái (Poll 22/11) | Vai trò & Nhiệm vụ chính | Thư mục / File sở hữu độc quyền | Nhánh Git đề xuất |
 | :--- | :--- | :--- | :--- | :--- |
 | **Phần 1** | **Đã nhận (1 vote)** *(chờ điền tên)* | **App & Container:** Ứng dụng Web 3-Tier & Docker Local | `app-repo/frontend/`, `app-repo/backend/`, `app-repo/docker-compose.yml` | `feat/part1-app` |
-| **Phần 2** | **Nguyễn Duy Quốc Bảo (`23520119`)** *(Đã nhận ✅)* | **Automation & Cloud:** CI/CD DevSecOps & Terraform Azure AKS | `app-repo/.github/`, `app-repo/sonar-project.properties`, `app-repo/.gitleaks.toml`, `infra-repo/terraform/` | `feat/part2-ci-terraform` |
-| **Phần 3** | **Chưa nhận (0 vote)** *(còn trống)* | **GitOps & Networking:** ArgoCD App-of-Apps, Kustomize, Sealed Secrets & Ingress/TLS | `infra-repo/k8s/`, `infra-repo/argocd/`, `infra-repo/ingress/` | `feat/part3-gitops-ingress` |
+| **Phần 2** | **Chưa nhận (0 vote)** *(còn trống)* | **Automation & Cloud:** CI/CD DevSecOps & Terraform Azure AKS | `app-repo/.github/`, `app-repo/sonar-project.properties`, `app-repo/.gitleaks.toml`, `infra-repo/terraform/` | `feat/part2-ci-terraform` |
+| **Phần 3** | **Nguyễn Duy Quốc Bảo (`23520119`)** *(Đã nhận ✅)* | **GitOps & Networking:** ArgoCD App-of-Apps, Kustomize, Sealed Secrets & Ingress/TLS | `infra-repo/k8s/`, `infra-repo/argocd/`, `infra-repo/ingress/` | `feat/part3-gitops-ingress` |
 | **Phần 4** | **Đã nhận (1 vote)** *(chờ điền tên)* | **Observability & AIOps:** Prometheus, Loki SingleBinary, Grafana & AIOps RCA Bot | `infra-repo/monitoring/`, `infra-repo/aiops-bot/` | `feat/part4-observability-aiops` |
 
 > [!IMPORTANT]
