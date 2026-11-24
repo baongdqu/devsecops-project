@@ -53,7 +53,8 @@ flowchart LR
 - **Test độc lập tại local:** `docker compose up --build` và `npm test`.
 - **Interface Contract bàn giao:**
   - Ports cố định: Frontend `:3000`, Backend `:5000`, PostgreSQL `:5432`, Redis `:6379`.
-  - Endpoints cố định: `/api/*`, `/health`, `/ready`, `/metrics`.
+  - Endpoints cố định: `/api/*` (NestJS dùng `app.setGlobalPrefix('api', { exclude: ['health', 'ready', 'metrics'] })` để khớp trực tiếp với NGINX Ingress), `/health`, `/ready`, `/metrics`.
+  - Container Security: `Dockerfile` bắt buộc chạy user non-root (Backend UID `1000`, Frontend UID `1001`) để khớp `securityContext.runAsNonRoot: true`.
   - Biến môi trường chuẩn (`.env.example`): `DATABASE_URL`, `REDIS_HOST`, `REDIS_PORT`, `PORT`.
 
 ---
@@ -72,9 +73,10 @@ flowchart LR
     - Quy trình `terraform apply` & `terraform destroy` tiết kiệm $100 Azure Student credit.
 - **Test độc lập:** Test GitHub Actions trên nhánh `feat/part2-ci-terraform` với `Dockerfile` tối thiểu; test Terraform bằng `terraform validate`, `terraform plan`, `terraform apply` lên Azure để verify AKS & ArgoCD UI.
 - **Interface Contract bàn giao:**
-  - Tên image trên GHCR:
+  - Tên image trên GHCR (lưu ý: chuyển 2 GHCR packages sang **Public** sau lần push đầu tiên để AKS pull không bị `ImagePullBackOff`):
     - `ghcr.io/baongdqu/app-repo/frontend:sha-<short>`
     - `ghcr.io/baongdqu/app-repo/backend:sha-<short>`
+  - AKS Network & Bootstrap Contract: Bật `network_policy = "azure"` (hoặc `"calico"`) trong Terraform AKS để `NetworkPolicy` có hiệu lực; thứ tự bootstrap chuẩn là `terraform apply` → `seal-secrets.ps1 restore-key` → `kubectl apply -f argocd/root-app.yaml`.
   - `kubeconfig` truy cập AKS, Public IP / DNS, và ArgoCD tự động đọc `argocd/apps/` từ `infra-repo`.
 
 ---
@@ -102,7 +104,8 @@ flowchart LR
 - **Test độc lập:** Chạy stack giám sát + Bot tại local bằng Docker Compose (bắn mock webhook từ Alertmanager vào Bot để kiểm chứng Gemini RCA & Telegram).
 - **Interface Contract bàn giao:**
   - Bot webhook URL nội bộ: `http://aiops-bot.aiops.svc.cluster.local:8000/webhook`.
-  - Scrape Backend `/metrics` ở port `5000` qua label `app: backend`.
+  - Scrape Backend `/metrics` ở port `5000` qua label `app: backend` (Service Backend đã gắn sẵn annotations `prometheus.io/scrape`, `path`, `port`).
+  - Khi ghép App-of-Apps, thêm `07-monitoring.yaml` và `08-aiops-bot.yaml` vào `infra-repo/argocd/apps/`.
 
 ---
 
