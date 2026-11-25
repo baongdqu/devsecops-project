@@ -3,14 +3,19 @@
 > **📚 Môn học:** Công nghệ DevOps và ứng dụng (`NT548.R11` — HK1, 2026-2027) — **GV:** Lê Anh Tuấn  
 > **🏷️ Nhóm:** Nhóm 1 | **📅 Deadline hoàn thành:** **28/11**
 
-## 🧑‍🤝‍🧑 Danh Sách Thành Viên (Nhóm 1)
+## 🧑‍🤝‍🧑 Danh Sách Thành Viên & Tài Khoản GitHub (Nhóm 1)
 
-| STT | Mã số SV | Họ và tên | Ghi chú phân công |
-| :---: | :---: | :--- | :--- |
-| 1 | `23520119` | **Nguyễn Duy Quốc Bảo** | **Phần 3** (GitOps, Kustomize, Sealed Secrets & Ingress/TLS) — GitHub: `@baongdqu` |
-| 2 | `22521269` | **Cao Văn Tài** | Chờ gán Phần 1 / 2 / 4 |
-| 3 | `23520201` | **Nguyễn Hùng Cường** | Chờ gán Phần 1 / 2 / 4 |
-| 4 | `23520246` | **Hồ Minh Đạt** | Chờ gán Phần 1 / 2 / 4 |
+| STT | Mã số SV | Họ và tên | GitHub Username | Trạng thái quyền Repo (Repo mẹ / App / Infra) | Ghi chú phân công |
+| :---: | :---: | :--- | :--- | :--- | :--- |
+| 1 | `23520119` | **Nguyễn Duy Quốc Bảo** | [`@baongdqu`](https://github.com/baongdqu) | ✅ Admin (cả 3 repo) | **Phần 3** (GitOps, Kustomize, Sealed Secrets & Ingress/TLS) *(Đã nhận ✅)* |
+| 2 | `23520201` | **Nguyễn Hùng Cường** | [`@NguyenHungCuongg`](https://github.com/NguyenHungCuongg) | ✅ Write (Repo mẹ, App) \| ⏳ Pending (Infra) | Chờ gán Phần 1 / 2 / 4 |
+| 3 | `22521269` | **Cao Văn Tài** | [`@gooderday1805`](https://github.com/gooderday1805) hoặc [`@senkochi`](https://github.com/senkochi) | ✅ Write (cả 3 repo) | Chờ gán Phần 1 / 2 / 4 |
+| 4 | `23520246` | **Hồ Minh Đạt** | [`@gooderday1805`](https://github.com/gooderday1805) hoặc [`@senkochi`](https://github.com/senkochi) | ✅ Write (cả 3 repo) | Chờ gán Phần 1 / 2 / 4 |
+
+> 📌 **Chi tiết phân quyền GitHub Collaborators hiện tại:**
+> - **Repo mẹ (`devsecops-project`):** `@baongdqu` (Admin), `@NguyenHungCuongg` (Write), `@gooderday1805` (Write), `@senkochi` (Write).
+> - **`app-repo`:** `@baongdqu` (Admin), `@NguyenHungCuongg` (Write), `@gooderday1805` (Write), `@senkochi` (Write).
+> - **`infra-repo`:** `@baongdqu` (Admin), `@gooderday1805` (Write), `@senkochi` (Write), `@NguyenHungCuongg` (Đã gửi invite Write, chờ accept tại [infra-repo invitations](https://github.com/baongdqu/infra-repo/invitations)).
 
 Tài liệu này quy định ranh giới sở hữu thư mục, **Interface Contracts (Hợp đồng giao tiếp)** và quy trình làm việc song song cho **4 thành viên**, đảm bảo làm việc độc lập và **không xung đột Git (Zero Merge Conflict)**.
 
