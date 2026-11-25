@@ -7,10 +7,10 @@
 
 | STT | Mã số SV | Họ và tên | GitHub Username | Trạng thái quyền Repo (Repo mẹ / App / Infra) | Ghi chú phân công |
 | :---: | :---: | :--- | :--- | :--- | :--- |
-| 1 | `23520119` | **Nguyễn Duy Quốc Bảo** | [`@baongdqu`](https://github.com/baongdqu) | ✅ Admin (cả 3 repo) | **Phần 3** (GitOps, Kustomize, Sealed Secrets & Ingress/TLS) *(Đã nhận ✅)* |
+| 1 | `23520119` | **Nguyễn Duy Quốc Bảo** | [`@baongdqu`](https://github.com/baongdqu) | ✅ Admin (cả 3 repo) | **Phần 3** (GitOps, Kustomize, Sealed Secrets & Ingress/TLS) *(Đã hoàn thành merge ✅)* |
 | 2 | `23520201` | **Nguyễn Hùng Cường** | [`@NguyenHungCuongg`](https://github.com/NguyenHungCuongg) | ✅ Write (cả 3 repo) | **Phần 4** (Observability Stack & AIOps RCA Bot) *(Đã hoàn thành merge ✅)* |
-| 3 | `22521269` | **Cao Văn Tài** | [`@gooderday1805`](https://github.com/gooderday1805) hoặc [`@senkochi`](https://github.com/senkochi) | ✅ Write (cả 3 repo) | Chờ gán Phần 1 / 2 / 4 |
-| 4 | `23520246` | **Hồ Minh Đạt** | [`@gooderday1805`](https://github.com/gooderday1805) hoặc [`@senkochi`](https://github.com/senkochi) | ✅ Write (cả 3 repo) | Chờ gán Phần 1 / 2 / 4 |
+| 3 | `22521269` | **Cao Văn Tài** | [`@gooderday1805`](https://github.com/gooderday1805) hoặc [`@senkochi`](https://github.com/senkochi) | ✅ Write (cả 3 repo) | Chờ gán Phần 1 / 2 |
+| 4 | `23520246` | **Hồ Minh Đạt** | [`@gooderday1805`](https://github.com/gooderday1805) hoặc [`@senkochi`](https://github.com/senkochi) | ✅ Write (cả 3 repo) | Chờ gán Phần 1 / 2 |
 
 > 📌 **Chi tiết phân quyền GitHub Collaborators hiện tại:**
 > - **Repo mẹ (`devsecops-project`):** `@baongdqu` (Admin), `@NguyenHungCuongg` (Write), `@gooderday1805` (Write), `@senkochi` (Write).
@@ -39,7 +39,7 @@ flowchart LR
 | :--- | :--- | :--- | :--- | :--- |
 | **Phần 1** | **Đã nhận (1 vote)** *(chờ điền tên)* | **App & Container:** Ứng dụng Web 3-Tier & Docker Local | `app-repo/frontend/`, `app-repo/backend/`, `app-repo/docker-compose.yml` | `feat/part1-app` |
 | **Phần 2** | **Chưa nhận (0 vote)** *(còn trống)* | **Automation & Cloud:** CI/CD DevSecOps & Terraform Azure AKS | `app-repo/.github/`, `app-repo/sonar-project.properties`, `app-repo/.gitleaks.toml`, `infra-repo/terraform/` | `feat/part2-ci-terraform` |
-| **Phần 3** | **Nguyễn Duy Quốc Bảo (`23520119`)** *(Đã nhận ✅)* | **GitOps & Networking:** ArgoCD App-of-Apps, Kustomize, Sealed Secrets & Ingress/TLS | `infra-repo/k8s/`, `infra-repo/argocd/`, `infra-repo/ingress/` | `feat/part3-gitops-ingress` |
+| **Phần 3** | **Nguyễn Duy Quốc Bảo (`23520119`)** *(Đã hoàn thành merge ✅)* | **GitOps & Networking:** ArgoCD App-of-Apps, Kustomize, Sealed Secrets & Ingress/TLS | `infra-repo/k8s/`, `infra-repo/argocd/`, `infra-repo/ingress/` | `feat/part3-gitops-ingress` |
 | **Phần 4** | **Nguyễn Hùng Cường (`23520201`)** *(Đã hoàn thành merge ✅)* | **Observability & AIOps:** Prometheus, Loki SingleBinary, Grafana & AIOps RCA Bot | `infra-repo/monitoring/`, `infra-repo/aiops-bot/` | `feat/part4-observability-aiops` |
 
 > [!IMPORTANT]
